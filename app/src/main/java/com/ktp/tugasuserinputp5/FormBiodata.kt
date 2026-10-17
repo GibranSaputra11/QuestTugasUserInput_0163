@@ -391,13 +391,27 @@ fun KontenUtama(modifier: Modifier) {
                                 modifier = Modifier.padding(bottom = 8.dp)
                             )
 
-                            Text(stringResource (R.string.Nama_Card) + " $textNamaDepan $textNamaBelakang", color = colorResource(id = R.color.white))
-                            Text(stringResource (R.string.Email_Card) + " $textEmail", color = colorResource(id = R.color.white))
-                            Text(stringResource (R.string.TanggalLahir_Card) + " $textTanggalLahir", color = colorResource(id = R.color.white))
-                            Text(stringResource (R.string.Pengalaman_Card) + " $textPengalaman", color = colorResource(id = R.color.white))
+                            Text(
+                                stringResource (R.string.Nama_Card) + " $textNamaDepan $textNamaBelakang",
+                                color = colorResource(id = R.color.white)
+                            )
+                            Text(
+                                stringResource (R.string.Email_Card) + " $textEmail",
+                                color = colorResource(id = R.color.white)
+                            )
+                            Text(stringResource (R.string.TanggalLahir_Card) + " $textTanggalLahir",
+                                color = colorResource(id = R.color.white)
+                            )
+                            Text(stringResource (R.string.Pengalaman_Card) + " $textPengalaman",
+                                color = colorResource(id = R.color.white)
+                            )
 
                             val skillGabungan = textSkill.joinToString(", ")
-                            Text(stringResource ( R.string.Keahlian_Card) + " $skillGabungan", color = colorResource(id = R.color.white))
+
+                            Text(
+                                stringResource ( R.string.Keahlian_Card) + " $skillGabungan",
+                                color = colorResource(id = R.color.white)
+                            )
                         }
                     }
                 }
