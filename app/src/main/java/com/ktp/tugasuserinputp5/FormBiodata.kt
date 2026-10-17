@@ -1,11 +1,18 @@
 package com.ktp.tugasuserinputp5
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringArrayResource
 
 @Composable
@@ -26,5 +33,11 @@ fun KontenUtama(modifier: Modifier) {
 
     val listPengalaman = stringArrayResource(id = R.array.listPengalaman)
     val listSkill = stringArrayResource(id = R.array.listSkill)
+
+    Box(
+        modifier = modifier.fillMaxSize()
+    ){
+
+    }
 
 }
