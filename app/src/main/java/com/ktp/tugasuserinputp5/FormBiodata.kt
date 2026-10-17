@@ -132,8 +132,8 @@ fun KontenUtama(modifier: Modifier) {
                                 top = 30.dp,
                                 start = 20.dp,
                                 end = 20.dp,
-                                bottom = 10.dp),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                bottom = 5.dp),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         OutlinedTextField(
                             value = textNamaDepan,
@@ -160,10 +160,10 @@ fun KontenUtama(modifier: Modifier) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(
-                                top = 10.dp,
+                                top = 5.dp,
                                 start = 20.dp,
                                 end = 20.dp,
-                                bottom = 10.dp),
+                                bottom = 5.dp),
                     ){
                         OutlinedTextField(
                             value = textEmail,
@@ -180,7 +180,7 @@ fun KontenUtama(modifier: Modifier) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(
-                                top = 10.dp,
+                                top = 5.dp,
                                 start = 20.dp,
                                 end = 20.dp,
                                 bottom = 10.dp),
@@ -247,7 +247,6 @@ fun KontenUtama(modifier: Modifier) {
                         Text(
                             text = stringResource(R.string.Skill),
                             fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(bottom = 8.dp)
                         )
 
                     }
