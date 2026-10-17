@@ -15,7 +15,10 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuBox
+import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -67,6 +70,8 @@ fun KontenUtama(modifier: Modifier) {
 
     var showDatePicker by remember { mutableStateOf(false) }
     val datePickerState = rememberDatePickerState()
+
+    var expandedDropdown by remember { mutableStateOf(false) }
 
 
     Box(
@@ -193,6 +198,37 @@ fun KontenUtama(modifier: Modifier) {
                                 }
                             }
                         )
+                        ExposedDropdownMenuBox(
+                            expanded = expandedDropdown,
+                            onExpandedChange = { expandedDropdown = !expandedDropdown },
+                            modifier = Modifier.weight(1f)
+                        ){
+                            OutlinedTextField(
+                                value = textPengalaman,
+                                onValueChange = {},
+                                readOnly = true,
+                                label = { Text(stringResource(R.string.Pengalaman)) },
+                                shape = MaterialTheme.shapes.large,
+                                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedDropdown) },
+                                modifier = Modifier
+                                    .menuAnchor()
+                                    .fillMaxWidth()
+                            )
+                            ExposedDropdownMenu(
+                                expanded = expandedDropdown,
+                                onDismissRequest = { expandedDropdown = false }
+                            ) {
+                                listPengalaman.forEach { option ->
+                                    DropdownMenuItem(
+                                        text = { Text(option) },
+                                        onClick = {
+                                            textPengalaman = option
+                                            expandedDropdown = false
+                                        }
+                                    )
+                                }
+                            }
+                        }
                     }
                 }
 
