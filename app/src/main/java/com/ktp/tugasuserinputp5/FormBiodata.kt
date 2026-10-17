@@ -396,11 +396,8 @@ fun KontenUtama(modifier: Modifier) {
                             Text(stringResource (R.string.TanggalLahir_Card) + " $textTanggalLahir", color = colorResource(id = R.color.white))
                             Text(stringResource (R.string.Pengalaman_Card) + " $textPengalaman", color = colorResource(id = R.color.white))
 
-                            val skillGabungan =
-                                if (textSkill.isEmpty()) "Belum ada" else textSkill.joinToString(
-                                    ", "
-                                )
-                            Text(text = "Keahlian: $skillGabungan", color = colorResource(id = R.color.white))
+                            val skillGabungan = textSkill.joinToString(", ")
+                            Text(stringResource ( R.string.Keahlian_Card) + " $skillGabungan", color = colorResource(id = R.color.white))
                         }
                     }
                 }
