@@ -349,17 +349,23 @@ fun KontenUtama(modifier: Modifier) {
                                     textTanggalLahir = formatter.format(Date(selectedMillis))
                                 }
                                 showDatePicker = false
-                            }) {
-                                Text(stringResource(R.string.ok))
+                            },) {
+                                Text(stringResource(R.string.ok), color = colorResource(id = R.color.titel_color))
                             }
                         },
                         dismissButton = {
                             TextButton(onClick = { showDatePicker = false }) {
-                                Text(stringResource(R.string.batal))
+                                Text(stringResource(R.string.batal), color = colorResource(id = R.color.titel_color))
                             }
                         }
                     ) {
-                        DatePicker(state = datePickerState)
+                        DatePicker(
+                            state = datePickerState,
+                            colors = androidx.compose.material3.DatePickerDefaults.colors(
+                                selectedDayContainerColor = colorResource(id = R.color.outline_color),
+                                todayDateBorderColor = colorResource(id = R.color.titel_color)
+                            )
+                        )
                     }
                 }
             }
