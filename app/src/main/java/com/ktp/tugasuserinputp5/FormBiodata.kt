@@ -91,12 +91,12 @@ fun KontenUtama(modifier: Modifier) {
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 250.dp)
         ) {
             item {
                 Card(
                     modifier = Modifier
-                        .fillMaxWidth(),
+                        .fillMaxWidth()
+                        .padding(top = 250.dp),
                     shape = RoundedCornerShape(
                         topStart = 30.dp,
                         topEnd = 30.dp,
