@@ -399,10 +399,12 @@ fun KontenUtama(modifier: Modifier) {
                                 stringResource (R.string.Email_Card) + " $textEmail",
                                 color = colorResource(id = R.color.white)
                             )
-                            Text(stringResource (R.string.TanggalLahir_Card) + " $textTanggalLahir",
+                            Text(
+                                stringResource (R.string.TanggalLahir_Card) + " $textTanggalLahir",
                                 color = colorResource(id = R.color.white)
                             )
-                            Text(stringResource (R.string.Pengalaman_Card) + " $textPengalaman",
+                            Text(
+                                stringResource (R.string.Pengalaman_Card) + " $textPengalaman",
                                 color = colorResource(id = R.color.white)
                             )
 
