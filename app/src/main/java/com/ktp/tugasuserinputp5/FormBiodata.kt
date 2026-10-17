@@ -31,6 +31,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
@@ -56,7 +57,7 @@ fun KontenUtama(modifier: Modifier) {
     var textEmail by remember { mutableStateOf (value = "") }
     var textTanggalLahir by remember { mutableStateOf (value = "") }
     var textPengalaman by remember { mutableStateOf (value = "") }
-    var textSkill by remember { mutableStateOf (value = "") }
+    var textSkill by remember { mutableStateOf (setOf<String>())) }
 
     var NamaDepan by remember { mutableStateOf (value = "") }
     var NamaBelakang by remember { mutableStateOf (value = "") }
@@ -72,7 +73,6 @@ fun KontenUtama(modifier: Modifier) {
     val datePickerState = rememberDatePickerState()
 
     var expandedDropdown by remember { mutableStateOf(false) }
-
 
     Box(
         modifier = modifier.fillMaxSize()
@@ -227,6 +227,53 @@ fun KontenUtama(modifier: Modifier) {
                                         }
                                     )
                                 }
+                            }
+                        }
+                    }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                top = 10.dp,
+                                start = 25.dp,
+                                end = 20.dp,
+                                bottom = 0.dp)
+                    ){
+                        Text(
+                            text = stringResource(R.string.Skill),
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(bottom = 8.dp)
+                        )
+
+                    }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                top = 0.dp,
+                                start = 12.dp,
+                                end = 20.dp,
+                                bottom = 10.dp)
+                    ) {
+                        listSkill.forEach { skill ->
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier.weight(1f)
+                            ) {
+                                androidx.compose.material3.Checkbox(
+                                    checked = textSkill.contains(skill),
+                                    onCheckedChange = { isChecked ->
+                                        if (isChecked) {
+                                            textSkill = textSkill + skill
+                                        } else {
+                                            textSkill = textSkill - skill
+                                        }
+                                    }
+                                )
+                                Text(
+                                    text = skill,
+                                    modifier = Modifier.padding(start = 2.dp)
+                                )
                             }
                         }
                     }
