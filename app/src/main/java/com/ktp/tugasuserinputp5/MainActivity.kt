@@ -20,8 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TugasUserInputP5Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    KontenUtama(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
