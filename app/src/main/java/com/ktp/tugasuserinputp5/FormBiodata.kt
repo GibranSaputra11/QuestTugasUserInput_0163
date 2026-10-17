@@ -114,6 +114,16 @@ fun KontenUtama(modifier: Modifier) {
                                 textNamaDepan = it
                             }
                         )
+                        OutlinedTextField(
+                            value = textNamaBelakang,
+                            singleLine = true,
+                            label = { Text(stringResource(R.string.Belakang)) },
+                            shape = MaterialTheme.shapes.large,
+                            modifier = Modifier.weight(1f),
+                            onValueChange = {
+                                textNamaBelakang = it
+                            }
+                        )
                     }
                 }
             }
