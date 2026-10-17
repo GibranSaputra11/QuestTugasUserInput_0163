@@ -101,7 +101,11 @@ fun KontenUtama(modifier: Modifier) {
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(all = 20.dp),
+                            .padding(
+                                top = 30.dp,
+                                start = 20.dp,
+                                end = 20.dp,
+                                bottom = 10.dp),
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         OutlinedTextField(
@@ -125,6 +129,27 @@ fun KontenUtama(modifier: Modifier) {
                             }
                         )
                     }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                top = 10.dp,
+                                start = 20.dp,
+                                end = 20.dp,
+                                bottom = 10.dp),
+                    ){
+                        OutlinedTextField(
+                            value = textEmail,
+                            singleLine = true,
+                            label = { Text(stringResource(R.string.Email)) },
+                            shape = MaterialTheme.shapes.large,
+                            modifier = Modifier.weight(1f),
+                            onValueChange = {
+                                textEmail = it
+                            }
+                        )
+                    }
+
                 }
             }
         }
