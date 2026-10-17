@@ -28,4 +28,12 @@
     <string name="ok">OK</string>
     <string name="batal">Batal</string>
     <string name="Simpan">Simpan</string>
+
+    <string name="DataTersimpan">Data Tersimpan</string>
+    <string name="Nama">Nama</string>
+    <string name="Email">Email</string>
+    <string name="TanggalLahir">Tanggal Lahir</string>
+    <string name="Pengalaman">Pengalaman</string>
+    <string name="Keahlian">Keahlian</string>
+
 </resources>
