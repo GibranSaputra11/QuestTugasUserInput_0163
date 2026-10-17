@@ -3,6 +3,7 @@ package com.ktp.tugasuserinputp5
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -75,6 +76,8 @@ fun KontenUtama(modifier: Modifier) {
     val datePickerState = rememberDatePickerState()
 
     var expandedDropdown by remember { mutableStateOf(false) }
+
+    var isSubmitted by remember { mutableStateOf(false) }
 
     Box(
         modifier = modifier.fillMaxSize()
@@ -291,6 +294,8 @@ fun KontenUtama(modifier: Modifier) {
                             TanggalLahir = textTanggalLahir
                             Pengalaman = textPengalaman
                             Skill = textSkill
+
+                            isSubmitted = true
                         },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = colorResource(id = R.color.button_color),
@@ -332,6 +337,46 @@ fun KontenUtama(modifier: Modifier) {
                         }
                     ) {
                         DatePicker(state = datePickerState)
+                    }
+                }
+            }
+            if (isSubmitted) {
+                item {
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(all = 20.dp),
+                        shape = RoundedCornerShape(16.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = colorResource(id = R.color.black)
+                        ),
+                        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+                    ) {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(20.dp),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Text(
+                                stringResource(R.string.DataTersimpan),
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = colorResource(id = R.color.white),
+                                modifier = Modifier.padding(bottom = 8.dp)
+                            )
+
+                            Text(stringResource (R.string.Nama_Card) + " $textNamaDepan $textNamaBelakang", color = colorResource(id = R.color.white))
+                            Text(stringResource (R.string.Email_Card) + " $textEmail", color = colorResource(id = R.color.white))
+                            Text(stringResource (R.string.TanggalLahir_Card) + " $textTanggalLahir", color = colorResource(id = R.color.white))
+                            Text(stringResource (R.string.Pengalaman_Card) + " $textPengalaman", color = colorResource(id = R.color.white))
+
+                            val skillGabungan =
+                                if (textSkill.isEmpty()) "Belum ada" else textSkill.joinToString(
+                                    ", "
+                                )
+                            Text(text = "Keahlian: $skillGabungan", color = colorResource(id = R.color.white))
+                        }
                     }
                 }
             }
