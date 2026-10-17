@@ -76,7 +76,25 @@ fun KontenUtama(modifier: Modifier) {
                     colors = CardDefaults.cardColors(containerColor = colorResource(id = R.color.white)),
                     elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
                 ) {
-
+                    Text(
+                        stringResource(R.string.Judul),
+                        fontSize = 30.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = colorResource(id = R.color.titel_color),
+                        modifier = Modifier
+                            .padding(top = 25.dp)
+                            .fillMaxWidth(1f),
+                        textAlign = TextAlign.Center
+                    )
+                    Text(
+                        stringResource(R.string.Caption),
+                        fontSize = 15.sp,
+                        color = colorResource(id = R.color.black),
+                        modifier = Modifier
+                            .padding(top = 10.dp)
+                            .fillMaxWidth(1f),
+                        textAlign = TextAlign.Center
+                    )
                 }
             }
         }
