@@ -392,7 +392,7 @@ fun KontenUtama(modifier: Modifier) {
                             )
 
                             Text(
-                                stringResource (R.string.Nama_Card) + " $textNamaDepan $textNamaBelakang",
+                                stringResource (R.string.Nama_Card) + " $NamaDepan $NamaBelakang",
                                 color = colorResource(id = R.color.white)
                             )
                             Text(
@@ -400,15 +400,15 @@ fun KontenUtama(modifier: Modifier) {
                                 color = colorResource(id = R.color.white)
                             )
                             Text(
-                                stringResource (R.string.TanggalLahir_Card) + " $textTanggalLahir",
+                                stringResource (R.string.TanggalLahir_Card) + " $TanggalLahir",
                                 color = colorResource(id = R.color.white)
                             )
                             Text(
-                                stringResource (R.string.Pengalaman_Card) + " $textPengalaman",
+                                stringResource (R.string.Pengalaman_Card) + " $Pengalaman",
                                 color = colorResource(id = R.color.white)
                             )
 
-                            val skillGabungan = textSkill.joinToString(", ")
+                            val skillGabungan = Skill.joinToString(", ")
 
                             Text(
                                 stringResource ( R.string.Keahlian_Card) + " $skillGabungan",
