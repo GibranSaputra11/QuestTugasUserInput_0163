@@ -15,4 +15,12 @@ fun KontenUtama(modifier: Modifier) {
     var textTanggalLahir by remember { mutableStateOf (value = "") }
     var textPengalaman by remember { mutableStateOf (value = "") }
     var textSkill by remember { mutableStateOf (value = "") }
+
+    var NamaDepan by remember { mutableStateOf (value = "") }
+    var NamaBelakang by remember { mutableStateOf (value = "") }
+    var Email by remember { mutableStateOf (value = "") }
+    var TanggalLahir by remember { mutableStateOf (value = "") }
+    var Pengalaman by remember { mutableStateOf (value = "") }
+    var Skill by remember { mutableStateOf (value = "")}
+
 }
