@@ -10,4 +10,18 @@
     <string name="TglLahir">Tanggal Lahir</string>
     <string name="Pengalaman">Experiences</string>
     <string name="Skill">Pilih Skill Anda</string>
+    
+    <string-array name="listPengalaman">
+        <item>1 Tahun</item>
+        <item>2 Tahun</item>
+        <item>3 Tahun</item>
+        <item>4 Tahun</item>
+        <item>5 Tahun</item>
+    </string-array>
+
+    <string-array name="listSkill">
+        <item>Android</item>
+        <item>UI/UX</item>
+        <item>Web</item>
+    </string-array>
 </resources>
