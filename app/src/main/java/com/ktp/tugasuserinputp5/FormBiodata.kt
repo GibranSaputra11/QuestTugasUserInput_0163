@@ -176,6 +176,23 @@ fun KontenUtama(modifier: Modifier) {
                                 bottom = 10.dp),
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ){
+                        OutlinedTextField(
+                            value = textTanggalLahir,
+                            onValueChange = { },
+                            readOnly = true,
+                            singleLine = true,
+                            label = { Text(stringResource(R.string.TglLahir)) },
+                            shape = MaterialTheme.shapes.large,
+                            modifier = Modifier.weight(1f),
+                            trailingIcon = {
+                                IconButton(onClick = { showDatePicker = true }) {
+                                    Icon(
+                                        imageVector = Icons.Default.DateRange,
+                                        contentDescription = null
+                                    )
+                                }
+                            }
+                        )
                     }
                 }
 
