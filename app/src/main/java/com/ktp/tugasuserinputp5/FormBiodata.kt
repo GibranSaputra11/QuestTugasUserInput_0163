@@ -16,6 +16,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.DropdownMenuItem
@@ -26,6 +28,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberDatePickerState
@@ -141,6 +144,10 @@ fun KontenUtama(modifier: Modifier) {
                             label = { Text(stringResource( R.string.Depan)) },
                             shape = MaterialTheme.shapes.large,
                             modifier = Modifier.weight(1f),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = colorResource(id = R.color.outline_color),
+                                focusedLabelColor = colorResource(id = R.color.outline_color),
+                            ),
                             onValueChange = {
                                 textNamaDepan = it
                             }
@@ -151,6 +158,10 @@ fun KontenUtama(modifier: Modifier) {
                             label = { Text(stringResource(R.string.Belakang)) },
                             shape = MaterialTheme.shapes.large,
                             modifier = Modifier.weight(1f),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = colorResource(id = R.color.outline_color),
+                                focusedLabelColor = colorResource(id = R.color.outline_color),
+                            ),
                             onValueChange = {
                                 textNamaBelakang = it
                             }
@@ -171,6 +182,10 @@ fun KontenUtama(modifier: Modifier) {
                             label = { Text(stringResource(R.string.Email)) },
                             shape = MaterialTheme.shapes.large,
                             modifier = Modifier.weight(1f),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = colorResource(id = R.color.outline_color),
+                                focusedLabelColor = colorResource(id = R.color.outline_color),
+                            ),
                             onValueChange = {
                                 textEmail = it
                             }
@@ -194,6 +209,10 @@ fun KontenUtama(modifier: Modifier) {
                             label = { Text(stringResource(R.string.TglLahir)) },
                             shape = MaterialTheme.shapes.large,
                             modifier = Modifier.weight(1f),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = colorResource(id = R.color.outline_color),
+                                focusedLabelColor = colorResource(id = R.color.outline_color),
+                            ),
                             trailingIcon = {
                                 IconButton(onClick = { showDatePicker = true }) {
                                     Icon(
@@ -215,6 +234,10 @@ fun KontenUtama(modifier: Modifier) {
                                 label = { Text(stringResource(R.string.Pengalaman)) },
                                 shape = MaterialTheme.shapes.large,
                                 trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedDropdown) },
+                                colors = OutlinedTextFieldDefaults.colors(
+                                    focusedBorderColor = colorResource(id = R.color.outline_color),
+                                    focusedLabelColor = colorResource(id = R.color.outline_color),
+                                ),
                                 modifier = Modifier
                                     .menuAnchor()
                                     .fillMaxWidth()
@@ -264,8 +287,11 @@ fun KontenUtama(modifier: Modifier) {
                                 verticalAlignment = Alignment.CenterVertically,
                                 modifier = Modifier.weight(1f)
                             ) {
-                                androidx.compose.material3.Checkbox(
+                                Checkbox(
                                     checked = textSkill.contains(skill),
+                                    colors = CheckboxDefaults.colors(
+                                        checkedColor = colorResource(id = R.color.outline_color),
+                                    ),
                                     onCheckedChange = { isChecked ->
                                         if (isChecked) {
                                             textSkill = textSkill + skill
