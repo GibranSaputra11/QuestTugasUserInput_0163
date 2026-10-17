@@ -345,9 +345,7 @@ fun KontenUtama(modifier: Modifier) {
                                     .selectedDateMillis
                                 if (selectedMillis != null) {
                                     val formatter =
-                                        SimpleDateFormat("dd MMMM yyyy", Locale("id", "ID")).apply {
-                                            timeZone = TimeZone.getTimeZone("UTC")
-                                        }
+                                        SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
                                     textTanggalLahir = formatter.format(Date(selectedMillis))
                                 }
                                 showDatePicker = false
